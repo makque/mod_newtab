@@ -1,5 +1,23 @@
 <html>
-  <body style="background-color: #eee; color: white;">
-    This is a test
-  </body>
+    <head>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'>
+        <style type="text/css">
+            body {
+                font-familiy: 'Roboto', arial, sans-serif;
+            }
+        </style>
+    </head>
+    <body style="background-color: #eee; color: #333;">
+        <h1>This is a test</h1>
+        <form id="test">
+            <input type="text" id="query" />
+            <input type="submit" value="Go"/>
+        </form>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script>
+            $('form#test').submit(function(e){
+                alert('http://www.google.com/search?q=' + encodeURIComponent($('input#query').val()));
+            });
+        </script>
+    </body>
 </html>
